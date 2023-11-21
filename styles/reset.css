@@ -1,15 +1,35 @@
 .current-forecast {
   text-align: center;
   margin: auto;
-  width: 60%;
-  border: 3px solid black;
+  width: 65%;
+  border: 3px solid white;
 }
 
 #history {
   width: 15%;
-  border: 3px solid black;
+  border: 3px solid white;
 }
 
 header {
   text-align: center;
+}
+
+#forecast-weather {
+  text-align: center;
+  margin: auto;
+  width: 1500px;
+  border: 3px solid white;
+}
+
+card {
+  padding: 2px 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 40%;
+
+  justify-content: space-evenly;
+}
+
+body {
+  background-color: skyblue;
 }
