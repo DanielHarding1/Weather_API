@@ -1,22 +1,15 @@
-//git ingnore
+var weatherRecords = ["Berlin", "Manila", "London", "Paris"];
 
-var location = $("#search-input").val().trim();
+//create a object with 5 random cities, when inputted the city is added to this object
+//when clicked on the button that is created from every new input the forecast api is run
 
-function renderButtons() {}
-
-function displayWeatherInfo(location) {
-  var lat = ($(this).attr = "data-coord-lat");
-  var long = $(this).attr("data-coord-lon");
+function displayWeatherInfo() {
+  var location = $(this).attr("data-name");
   var queryURL =
-    "https://api.openweathermap.org/data/2.5/forecast?lat=" +
-    lat +
-    "&lon=" +
-    long +
-    "&appid=f3681c042c4653e88cfa8b557438ba39";
-
-  lat + "&" + long + "&appid=f3681c042c4653e88cfa8b557438ba39";
-
-  fetch(queryURL)
+    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    location +
+    "&appid=d3f1d668ff3a88cdb44b7f7575041175";
+  var queryURL = fetch(queryURL)
     .then(function (response) {
       return response.json();
     })
@@ -26,12 +19,27 @@ function displayWeatherInfo(location) {
     });
 }
 
-$("#search-button").on("click", "#search-form", function (event) {
-  var clickedOn = $(event.target);
-  var name = clickedOn.attr("data-name");
+function renderButton() {
+  $("#history").empty();
+  for (var i = 0; i < weatherRecords.length; i++) {
+    var LocBtn = $("<button>");
+    LocBtn.addClass("weather-records");
+    LocBtn.attr("data-name", weatherRecords[i]);
+    LocBtn.text(weatherRecords[i]);
+    $("#history").prepend(LocBtn);
+  }
+}
+
+$("#search-button").on("click", function (event) {
+  event.preventDefault();
+  var location = $("#search-input").val();
+  console.log(location);
+  weatherRecords.push(location);
+  renderButton();
 });
 
-displayWeatherInfo();
+$(document).on("click", ".weather-records", displayWeatherInfo);
+renderButton();
 //   Create a weather dashboard with form inputs.
 // When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history
 
