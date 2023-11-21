@@ -1,5 +1,8 @@
 var weatherRecords = ["Berlin", "Manila", "London", "Paris"];
-
+var queryURL =
+  "http://api.openweathermap.org/data/2.5/weather?q=" +
+  location +
+  "&appid=d3f1d668ff3a88cdb44b7f7575041175";
 //create a object with 5 random cities, when inputted the city is added to this object
 //when clicked on the button that is created from every new input the forecast api is run
 
@@ -9,13 +12,26 @@ function displayWeatherInfo() {
     "http://api.openweathermap.org/data/2.5/weather?q=" +
     location +
     "&appid=d3f1d668ff3a88cdb44b7f7575041175";
-  var queryURL = fetch(queryURL)
+
+  $(".current-forecast").empty();
+
+  fetch(queryURL)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(queryURL);
       console.log(data);
+      var locationTitle = $("<h1>").text(data.name);
+      $(".current-forecast").prepend(locationTitle);
+      var locationTemp = $("<p>").text("Temperature: " + data.main.temp);
+      $(".current-forecast").append(locationTemp);
+      var iconCode = data.weather[0].icon;
+      var iconURL = "http://openweathermap.org/img/w/" + iconCode + ".png";
+      var weatherIcon = $("<img>")
+        .attr("src", iconURL)
+        .attr("alt", "Weather Icon");
+      $(".current-forecast").append(weatherIcon);
     });
 }
 
