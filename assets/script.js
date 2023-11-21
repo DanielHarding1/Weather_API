@@ -55,7 +55,7 @@ function displayWeatherInfo() {
           console.log(forecastURL);
           console.log(data2);
           $("#forecast-weather").empty();
-          for (var i = 12; i < 60; i = i + 8) {
+          for (var i = 12; i < 52; i = i + 8) {
             var forecastTitle = $("<card>")
               .addClass("container")
               .text(data2.list[i].dt_txt);
@@ -71,7 +71,7 @@ function displayWeatherInfo() {
             var Celsius = (data2.list[i].main.temp - 273.15).toFixed(1);
             var forecastTemp = $("<p>")
               .addClass("container")
-              .text("Temperature: " + Celsius + " C");
+              .text("Temperature: " + Celsius + "C");
             $(forecastTitle).append(forecastTemp);
             var forecastHum = $("<p>")
               .addClass("container")

@@ -8,6 +8,7 @@
 #history {
   width: 15%;
   border: 3px solid white;
+  height: 500px;
 }
 
 header {
@@ -17,7 +18,7 @@ header {
 #forecast-weather {
   text-align: center;
   margin: auto;
-  width: 1500px;
+  width: 65%;
   border: 3px solid white;
 }
 
