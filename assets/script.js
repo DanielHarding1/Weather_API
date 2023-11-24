@@ -64,21 +64,21 @@ function displayWeatherInfo() {
             var iconURL =
               "http://openweathermap.org/img/w/" + iconCode + ".png";
             var weatherIcon = $("<img>")
-              .addClass("container")
+              .addClass("card")
               .attr("src", iconURL)
               .attr("alt", "Weather Icon");
             $(forecastTitle).append(weatherIcon);
             var Celsius = (data2.list[i].main.temp - 273.15).toFixed(1);
             var forecastTemp = $("<p>")
-              .addClass("container")
+              .addClass("card")
               .text("Temperature: " + Celsius + "C");
             $(forecastTitle).append(forecastTemp);
             var forecastHum = $("<p>")
-              .addClass("container")
+              .addClass("card")
               .text("Humidity: " + data2.list[i].main.humidity + "%");
             $(forecastTitle).append(forecastHum);
             var forecastWind = $("<p>")
-              .addClass("container")
+              .addClass("card")
               .text("Wind: " + data2.list[i].wind.speed + " KPH");
             $(forecastTitle).append(forecastWind);
           }
