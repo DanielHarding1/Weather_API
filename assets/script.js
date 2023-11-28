@@ -1,6 +1,6 @@
 var weatherRecords = ["Stevenage", "Manila", "London", "Bordon"];
 var queryURL =
-  "http://api.openweathermap.org/data/2.5/weather?q=" +
+  "https://api.openweathermap.org/data/2.5/weather?q=" +
   location +
   "&appid=d3f1d668ff3a88cdb44b7f7575041175";
 //create a object with 5 random cities, when inputted the city is added to this object
@@ -9,7 +9,7 @@ var queryURL =
 function displayWeatherInfo() {
   var location = $(this).attr("data-name");
   var queryURL =
-    "http://api.openweathermap.org/data/2.5/weather?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
     location +
     "&appid=d3f1d668ff3a88cdb44b7f7575041175";
 
@@ -42,7 +42,7 @@ function displayWeatherInfo() {
       var long = data.coord.lon;
 
       var forecastURL =
-        "http://api.openweathermap.org/data/2.5/forecast?lat=" +
+        "https://api.openweathermap.org/data/2.5/forecast?lat=" +
         lat +
         "&lon=" +
         long +
@@ -62,7 +62,7 @@ function displayWeatherInfo() {
             $("#forecast-weather").append(forecastTitle);
             var iconCode = data2.list[i].weather[0].icon;
             var iconURL =
-              "http://openweathermap.org/img/w/" + iconCode + ".png";
+              "https://openweathermap.org/img/w/" + iconCode + ".png";
             var weatherIcon = $("<img>")
               .addClass("card")
               .attr("src", iconURL)
