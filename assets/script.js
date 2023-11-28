@@ -1,4 +1,4 @@
-var weatherRecords = ["Berlin", "Manila", "London", "Paris"];
+var weatherRecords = ["Stevenage", "Manila", "London", "Bordon"];
 var queryURL =
   "http://api.openweathermap.org/data/2.5/weather?q=" +
   location +
