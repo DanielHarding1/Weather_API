@@ -16,54 +16,49 @@
     </header>
 
     <!-- max-width for ultra wide resolutions -->
-    <div class="container-fluid"></div>
-    <div class="row">
-      <aside class="col-lg-3 pb-3">
-        <h2 id="form-heading" class="mt-1 h3 form-label">Search for a City:</h2>
-        <form id="search-form" class="form">
-          <div class="form-inline form-group">
-            <div class="input-group">
-              <input
-                class="form-input weather-search"
-                type="text"
-                id="search-input"
-                placeholder="London"
-                aria-labelledby="form-heading"
-                aria-controls="today forecast"
-              />
-              
-              <div class="input-group-append">
-                <button
-                  type="submit"
-                  class="btn search-button"
-                  id="search-button"
-                  aria-label="submit search"
-                >
-                  Search
-                </button>
-              </div>
-            </div>
-            <aside></aside>
-                <div class="current-forecast">
-                  <p>This is where the current forecast goes!</p>
+    <div class="container-fluid parent">
+      <div class="row">
+        <aside class="col-lg-4 pb-4">
+          <h2 id="form-heading" class="mt-1 h3 form-label">
+            Search for a City:
+          </h2>
+          <form id="search-form" class="form">
+            <div class="form-inline form-group">
+              <div class="input-group">
+                <input
+                  class="form-input weather-search"
+                  type="text"
+                  id="search-input"
+                  placeholder="London"
+                  aria-labelledby="form-heading"
+                  aria-controls="today forecast"
+                />
+
+                <div class="input-group-append">
+                  <button
+                    type="submit"
+                    class="btn search-button"
+                    id="search-button"
+                    aria-label="submit search"
+                  >
+                    Search
+                  </button>
                 </div>
-                <div class="row" id="forecast-weather">
-             
-                  <p>This is where future weather goes</p>
-                
               </div>
             </div>
-          </div>
-        </form>
-        <br>
-        <br>
-         <div id="same">
+          </form>
           <div class="list-group" id="history"></div>
         </aside>
-     
       </div>
-      </aside>
-
+      <div>
+        <div class="current-forecast">
+          <p></p>
+        </div>
+        <div class="row" id="forecast-weather">
+          <p></p>
+        </div>
+      </div>
+    </div>
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <!-- jQuery -->
